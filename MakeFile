@@ -9,7 +9,7 @@ SRC = src/main.c src/funciones.c src/txt_reader.c
 OBJETOS = $(SRC:.c=.o)
 
 # Nombre del ejecutable
-EJECUTABLE = codificador
+EJECUTABLE = tarea1
 
 # Regla principal
 all: $(EJECUTABLE)
