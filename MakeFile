@@ -1,9 +1,12 @@
 # Compilador y banderas
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99
+CFLAGS = -Wall -Wextra -std=c99 -Iinclude  # Añadimos -Iinclude para incluir la carpeta include
 
-# Archivos objeto
-OBJETOS = main.o funciones.o txt_reader.o
+# Archivos fuente (ahora se encuentran en la carpeta src)
+SRC = src/main.c src/funciones.c src/txt_reader.c
+
+# Archivos objeto (con la misma ruta de la carpeta src)
+OBJETOS = $(SRC:.c=.o)
 
 # Nombre del ejecutable
 EJECUTABLE = codificador
@@ -16,9 +19,9 @@ $(EJECUTABLE): $(OBJETOS)
 	$(CC) $(CFLAGS) -o $@ $^
 
 # Regla para compilar archivos .c a .o
-%.o: %.c
-	$(CC) $(CFLAGS) -c $<
+src/%.o: src/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Limpiar archivos generados
 clean:
-	rm -f *.o $(EJECUTABLE)
+	del *.o $(EJECUTABLE)
