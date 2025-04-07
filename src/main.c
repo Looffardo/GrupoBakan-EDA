@@ -53,8 +53,6 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    char linea[MAX_LINE_LENGTH];
-
     if (strcmp(accion, "encode") == 0) {
         codificar(entrada, salida, clave1, clave2, strlen(clave1));
     } else {
