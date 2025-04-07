@@ -55,17 +55,11 @@ int main(int argc, char *argv[]) {
 
     char linea[MAX_LINE_LENGTH];
 
-    // Leer el archivo de entrada y procesar línea por línea
-    while (fgets(linea, MAX_LINE_LENGTH, entrada)) {
-        // Codificar o decodificar según el parámetro de acción
-        if (strcmp(accion, "encode") == 0) {
-            codificar(linea, clave1, clave2);
-        } else {
-            decodificar(linea, clave1, clave2);
-        }
-        // Escribir la línea procesada en el archivo de salida
-        fputs(linea, salida);
-    }
+    if (strcmp(accion, "encode") == 0) {
+        codificar(entrada, salida, clave1, clave2, strlen(clave1));
+    } else {
+        decodificar(entrada, salida, clave1, clave2, strlen(clave1));
+    }    
 
     // Cerrar los archivos
     fclose(entrada);

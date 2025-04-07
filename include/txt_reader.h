@@ -1,6 +1,5 @@
 #ifndef TXT_READER_H
 #define TXT_READER_H
-
 #include <stdio.h>
 
 // Abre un archivo en modo lectura y retorna el puntero (o NULL si falla)
