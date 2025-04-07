@@ -1,0 +1,24 @@
+# Compilador y banderas
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
+
+# Archivos objeto
+OBJETOS = main.o funciones.o txt_reader.o
+
+# Nombre del ejecutable
+EJECUTABLE = codificador
+
+# Regla principal
+all: $(EJECUTABLE)
+
+# Cómo construir el ejecutable
+$(EJECUTABLE): $(OBJETOS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+# Regla para compilar archivos .c a .o
+%.o: %.c
+	$(CC) $(CFLAGS) -c $<
+
+# Limpiar archivos generados
+clean:
+	rm -f *.o $(EJECUTABLE)
