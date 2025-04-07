@@ -3,7 +3,7 @@
 #include <ctype.h>
 
 
-
+//Cambiar los caracteres del .txt en funcion de las claves
 char mapear(char c, const char *clave1, const char *clave2, int len) {
     for (int i = 0; i < len; i++) {
         if (tolower(c) == tolower(clave1[i]))
@@ -21,17 +21,15 @@ int comparacion_strings(const char *str1, const char *str2) {
     // arreglo de tamaño 256 para guardar caracteres
     int marcado[256] = {0};
 
-    // Recorremos el primer string
     for (int i = 0; str1[i] != '\0'; i++) {
         // Si el carácter ya está marcado, hay repetición
         if (marcado[(unsigned char)str1[i]]) {
-            return 1;  // Retorna 1 si encuentra repetición
+            return 1;
         }
         // Marcamos el carácter como encontrado
         marcado[(unsigned char)str1[i]] = 1;
     }
 
-    // Recorremos el segundo string
     for (int i = 0; str2[i] != '\0'; i++) {
         // Si el carácter ya está marcado, hay repetición
         if (marcado[(unsigned char)str2[i]]) {
@@ -41,7 +39,6 @@ int comparacion_strings(const char *str1, const char *str2) {
         marcado[(unsigned char)str2[i]] = 1;
     }
 
-    // Si no se encuentra ningún carácter repetido, retornamos 0
     return 0;
 }
 

@@ -7,8 +7,8 @@
 #define MAX_LINE_LENGTH 1024
 
 int main(int argc, char *argv[]) {
-    if (argc != 6) { // 5 parámetros + el nombre del ejecutable ////////////////////////////////////////////////
-        printf("Error: Debes ingresar 5 parámetros.\n");
+    if (argc != 6) { // 5 parámetros + el nombre del ejecutable 
+        printf("Error: Debes ingresar 5 parametros.\n");
         return 1;
     }
 
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
     //
 
     if (strcmp(accion, "encode") != 0 && strcmp(accion, "decode") != 0) {
-        printf("Error: El segundo parámetro debe ser 'encode' o 'decode'.\n");
+        printf("Error: El segundo parametro debe ser 'encode' o 'decode'.\n");
         return 1;
     }
 
@@ -65,6 +65,6 @@ int main(int argc, char *argv[]) {
     fclose(entrada);
     fclose(salida);
 
-    printf("El archivo fue %s con éxito.\n", accion);
+    printf("El archivo fue %s con exito.\n", accion);
     return 0;
 }
